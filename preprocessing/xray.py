@@ -24,7 +24,8 @@ def percentile_xray8bit(file, rescale_size=(512, 512), output_channel=1, interpo
     #stacking gray channel image to make 3channels.
     if output_channel == 3:
       tmp_img = np.stack((tmp_img,)*3, axis=-1)
-      
-    return tmp_img#return preprocessed image
+     
+    #return preprocessed image
+    return tmp_img
   
 
