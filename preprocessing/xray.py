@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image
 import cv2
 
-def load_input(file, rescale_size=(512, 512), output_channel=1):
+def percentile_xray8bit(file, rescale_size=(512, 512), output_channel=1, interpolation_method=cv2.INTER_CUBIC):
   
     img_rows = rescale_size[0]
     img_cols = rescale_size[1]
@@ -11,7 +11,7 @@ def load_input(file, rescale_size=(512, 512), output_channel=1):
     _rows, _cols = tmp_img.shape#get image size
 
     #resize image having img_rows x img_cols using linear interpolation method (there exists other methods of course)
-    tmp_img = cv2.resize(tmp_img, (img_rows, img_cols), interpolation = cv2.INTER_CUBIC) # interpolation
+    tmp_img = cv2.resize(tmp_img, (img_rows, img_cols), interpolation = interpolation_method) # interpolation
     tmp_img = tmp_img.astype('float32')#change data type
     
     #normalization and cut 1% outliers
