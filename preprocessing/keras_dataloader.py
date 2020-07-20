@@ -10,11 +10,11 @@ class Dataloder(tensorflow.keras.utils.Sequence):
         shuffle: Boolean, if `True` shuffle image indexes each epoch.
     """
     
-    def __init__(self, dataset, batch_size=1, shuffle=False):
+    def __init__(self, dataset, batch_size=1, shuffling=False):
         self.dataset = dataset
         self.batch_size = batch_size
-        self.shuffle = shuffle
-        #self.indexes = np.arange(len(dataset))
+        self.shuffle = shuffling
+        self.indexes = np.arange(len(dataset))
 
         self.on_epoch_end()
 
