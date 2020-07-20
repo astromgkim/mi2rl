@@ -10,7 +10,7 @@ class Dataloader(tensorflow.keras.utils.Sequence):
         shuffle: Boolean, if `True` shuffle image indexes each epoch.
     """
     
-    def __init__(self, dataset, batch_size=1, shuffling=False):
+    def __init__(self, dataset, batch_size=1, shuffle=False):
         self.dataset = dataset
         self.batch_size = batch_size
         self.shuffle = shuffling
