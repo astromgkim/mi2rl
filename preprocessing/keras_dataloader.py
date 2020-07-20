@@ -1,6 +1,6 @@
 import tensorflow.keras
     
-class Dataloder(keras.utils.Sequence):
+class Dataloder(tensorflow.keras.utils.Sequence):
     """Load data from dataset and form batches
     
     Args:
