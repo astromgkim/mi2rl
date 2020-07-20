@@ -13,7 +13,7 @@ class Dataloader(tensorflow.keras.utils.Sequence):
     def __init__(self, dataset, batch_size=1, shuffle=False):
         self.dataset = dataset
         self.batch_size = batch_size
-        self.shuffle = shuffling
+        self.shuffle = shuffle
         self.indexes = np.arange(len(dataset))
 
         self.on_epoch_end()
