@@ -14,8 +14,7 @@ class Dataloder(tensorflow.keras.utils.Sequence):
         self.dataset = dataset
         self.batch_size = batch_size
         self.shuffle = shuffle
-        ###########
-        self.indexes = np.arange(len(dataset))
+        #self.indexes = np.arange(len(dataset))
 
         self.on_epoch_end()
 
