@@ -1,7 +1,7 @@
-import tensorflow.keras
+import keras
 import numpy as np
     
-class Dataloader(tensorflow.keras.utils.Sequence):
+class Dataloader(keras.utils.Sequence):
     """Load data from dataset and form batches
     
     Args:
