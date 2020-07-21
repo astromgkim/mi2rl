@@ -2,7 +2,8 @@
 
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
-from tensorflow.keras.applications.vgg19 import VGG19
+#from tensorflow.keras.applications.vgg19 import VGG19
+from keras.applications.vgg19 import VGG19
 
 def plv(y_true, y_pred):
     # must ensure that y_true and y_pred come from same distribution
