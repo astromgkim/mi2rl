@@ -223,6 +223,13 @@ def unet_deep16_bottleneck_dilation_sigmoid(inputs):
 
 
 
+def aggregate(l1, l2, l3, l4, l5):
+    out = concatenate([l1, l2, l3, l4, l5], axis = -1)
+    out =  Conv2D(320, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(out)
+    out = BatchNormalization()(out)
+    out = ReLU()(out)
+    return out
+
 base_channel = 64
 def unet3plus(inputs, conv_num = base_channel):
     
