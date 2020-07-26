@@ -2,9 +2,13 @@ import keras.backend as K
 from keras.applications.vgg16 import VGG16
 from keras.models import Model
 
-image_shape = (512, 512, 3)
-
-def perceptual_loss(y_true, y_pred):
+def perceptual_loss(y_true, y_pred, image_shape = (512, 512, 3)):
+    
+    y_true = K.concatenate( [y_true for i in range(3)], axis=-1 )
+    y_pred = K.concatenate( [y_pred for i in range(3)], axis=-1 )
+    y_true = K.cast( y_true, 'float32' )
+    y_pred = K.cast( y_pred, 'float32' )
+    
     vgg = VGG16(include_top=False, weights='imagenet', input_shape=image_shape)
     loss_model = Model(inputs=vgg.input, outputs=vgg.get_layer('block3_conv3').output)
     loss_model.trainable = False
