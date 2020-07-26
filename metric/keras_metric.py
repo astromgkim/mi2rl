@@ -2,7 +2,8 @@ import keras.backend as K
 from keras.applications.vgg16 import VGG16
 from keras.models import Model
 
-def perceptual_loss(y_true, y_pred, image_shape = (512, 512, 3)):
+image_shape = (1024, 1024, 3)
+def perceptual_loss(y_true, y_pred):
     
     y_true = K.concatenate( [y_true for i in range(3)], axis=-1 )
     y_pred = K.concatenate( [y_pred for i in range(3)], axis=-1 )
