@@ -1,5 +1,5 @@
 
-def dicom_header_copy(ds):
+def dicom_header_copy(dcm, ds):
 
   ds.ImageType='DERIVED\PRIMARY\AXIAL'#dcm.ImageType
   ds.SOPClassUID=dcm.SOPClassUID
