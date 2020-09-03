@@ -1,5 +1,5 @@
 
-def dicom_header_copy():
+def dicom_header_copy(ds):
 
   ds.ImageType='DERIVED\PRIMARY\AXIAL'#dcm.ImageType
   ds.SOPClassUID=dcm.SOPClassUID
@@ -304,3 +304,5 @@ def dicom_header_copy():
       ds.WindowCenterWidthExplanation=dcm.WindowCenterWidthExplanation
   except:
       pass
+
+  return ds
