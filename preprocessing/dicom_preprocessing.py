@@ -3,8 +3,8 @@ def dicom_header_copy(dcm, ds):
 
   ds.ImageType='DERIVED\PRIMARY\AXIAL'#dcm.ImageType
   ds.SOPClassUID=dcm.SOPClassUID
-  #ds.SOPClassUID='1.2.840.10008.5.1.4.1.1.2.1'#enhanced CT
-  #ds.SOPClassUID='1.2.840.10008.1.1'
+  ds.SOPInstanceUID=dcm.SOPInstanceUID     
+  
   try:
       ds.StudyDate=dcm.StudyDate
   except:
